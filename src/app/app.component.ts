@@ -1,19 +1,16 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { elementAt } from 'rxjs';
+import { UserComponent } from './user/user.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, UserComponent],
   template: `
-  <h1>This is my first app in angular</h1>
-  <p>My name is {{user}} </p>
-
+  <app-user/>
   `,
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Angular Journey'
-  user = 'Nixarkye'
 }

@@ -1,0 +1,9 @@
+section {
+    padding-top: 32px;
+    max-width: 720px;
+    margin: 0px auto;
+}
+img{
+    width: 60px;
+    border-radius: 50%;
+}

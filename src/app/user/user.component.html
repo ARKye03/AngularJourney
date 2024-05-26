@@ -1,1 +1,17 @@
-<p>user works!</p>
+<section>
+    <div class="container">
+    <h1>Welcome to {{title}}</h1>
+    <p>My name is {{user}}</p>
+    <a href="https://github.com/ARKye03" target="_blank"><img src="https://github.com/arkye03.png" alt="avatar"></a>
+</div>
+@if (OnIt) {
+    <p>Welcome to angular 18 </p>
+    <button (click)="GreetMe()">Say Hello!</button>
+    @for (movie of someMovies; track movie.id) {
+        <p>{{movie.id +1}}:  {{movie.name}}</p>
+    }
+    <button (click)="OnIt = !OnIt">Click me</button>
+} @else {
+    <button (click)="OnIt = !OnIt">Click me</button>
+}
+</section>

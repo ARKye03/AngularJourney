@@ -1,16 +1,23 @@
 import { Component } from '@angular/core';
+import { KittensComponent } from '../kittens/kittens.component';
 
 @Component({
   selector: 'app-user',
   standalone: true,
-  imports: [],
+  imports: [KittensComponent],
   templateUrl: './user.component.html',
   styleUrl: './user.component.css'
 })
 export class UserComponent {
   title = 'Angular Journey'
-  user = 'Nixarkye'
-  OnIt = false
+  user = 'ARKye03'
+  Kittens = false
+  status: string = 'standard'
+
+  changeStatusFromChild(whereTo: string){
+    this.status = whereTo
+  }
+
   someMovies = [{
     id: 0,
     name: 'The Shawshank Redemption',

@@ -1,17 +1,38 @@
 <section>
-    <div class="container">
-    <h1>Welcome to {{title}}</h1>
+    <div>
+    <h1>Welcome to my {{title}}</h1>
     <p>My name is {{user}}</p>
     <a href="https://github.com/ARKye03" target="_blank"><img src="https://github.com/arkye03.png" alt="avatar"></a>
 </div>
-@if (OnIt) {
-    <p>Welcome to angular 18 </p>
-    <button (click)="GreetMe()">Say Hello!</button>
+
+@if (status == 'movies') {
+    <p>This is made with Angular</p>
+    <p>I'm currently learning it, so this is what I've done, in just a moment 😄</p>
+ <article>
+    Angular is a framework for building web applications using TypeScript and
+    JavaScript. It is a free and open-source web application framework written in
+    TypeScript and JavaScript. It is maintained by Google and is used by Google
+    and many other companies.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit error qui culpa eveniet impedit architecto debitis nisi eligendi laboriosam ex exercitationem, tenetur numquam maiores! Assumenda culpa nemo ipsa molestias laboriosam!
+ </article>   
+ <div>
+     <button (click)="status = 'standard'">Go to the foyer</button>
+     <button (click)="status = 'kittens'">Go to Kittens</button>
+ <h1>RandomMovies</h1>
     @for (movie of someMovies; track movie.id) {
         <p>{{movie.id +1}}:  {{movie.name}}</p>
     }
-    <button (click)="OnIt = !OnIt">Click me</button>
-} @else {
-    <button (click)="OnIt = !OnIt">Click me</button>
+    <p>These are really not that random, everything is part of our destiny!</p>
+</div>
 }
+@else if (status == 'kittens') {
+    <app-kittens (changeStatus)="changeStatusFromChild($event)">
+        
+    </app-kittens>
+}
+@else {
+    <button (click)="status = 'movies'">Go to Movies</button>
+     <button (click)="status = 'kittens'">Go to Kittens</button>
+}
+<h3>Hire <a href="mailto:rafa03-dev@proton.me">me</a> please</h3>
 </section>
